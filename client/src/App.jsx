@@ -2,6 +2,10 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { Route } from 'react-router-dom/cjs/react-router-dom.min'
+// Views 
+import { Home, Landing, Form, Detail } from './views';
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,6 +13,19 @@ function App() {
   return (
     <>
       <div>
+        <Route exact path="/">
+          <Landing /> 
+        </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/detail">
+          <Detail />
+        </Route>
+        <Route path="/create">
+          <Form />
+        </Route>
+        
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>

@@ -21,8 +21,8 @@ const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: true }).then(() => {  // en true cada vez que levante mi servidor se resetea mi bdd, una vez terminado y en correcion setearlo en false con algunos juego ya creados 
   server.listen(3001, () => {
     console.log('Listening on port 3001'); // eslint-disable-line no-console
-  });
+  });               
 });
